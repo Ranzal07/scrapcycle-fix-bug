@@ -1,0 +1,81 @@
+[
+    {
+        "item": "PET bottle (Clean w/o caps & labels)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "1"
+    },
+    {
+        "item": "PET bottle (Unclean w/ caps & labels)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "4.50 / kg",
+        "type": "1"
+    },
+    {
+        "item": "Plastic (sibakin) HDPE",
+        "examples": ["Food bottles used for vinegar", "soy sauce", "ketchup", "etc"],
+        "value": "6.00 / kg",
+        "type": "1"
+    },
+    {
+        "item": "PET bottle (Clean w/o caps & labels)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "1"
+    },
+    {
+        "item": "gfhfdgh",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "2"
+    },
+    {
+        "item": "PET gfhfgh & labels)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "2"
+    },
+    {
+        "item": "ghmhjmyu657s)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "3"
+    },
+    {
+        "item": "sadfasdfls)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "3"
+    },
+    {
+        "item": "Piyujgvyujbels)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "3"
+    },
+    {
+        "item": "ghdfdh/o caps & labels)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "4"
+    },
+    {
+        "item": "Pujyujyuj)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "4"
+    },
+    {
+        "item": "5632ryfdv",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "5"
+    },
+    {
+        "item": ";gjitypoujh)",
+        "examples": ["Mineral water bottle", "Clear softdrinks bottle"],
+        "value": "6.00 / kg",
+        "type": "5"
+    }
+    
+]
