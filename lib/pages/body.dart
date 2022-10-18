@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pricelist/pages/set_address.dart';
 import 'package:pricelist/providers/address_provider.dart';
+import 'package:pricelist/providers/change_notifier.dart';
 import 'package:pricelist/providers/home_provider.dart';
 import 'package:pricelist/providers/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -137,6 +138,7 @@ class _BodyPageState extends State<BodyPage> {
 
       String dateID = '$day-$month-$year';
       context.read<HomeState>().changeDateID(dateID);
+      context.read<ChangePage>().schedID = '$scheduleChoice, $year';
 
       try {
         await schedule.doc('$scheduleChoice, $year').collection('users').doc(userID).set({
@@ -326,8 +328,7 @@ class _BodyPageState extends State<BodyPage> {
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () {
-                                                      Navigator.of(context)
-                                                          .pop();
+                                                      Navigator.of(context, rootNavigator: true).pop();
                                                     },
                                                     child: Text('Back',
                                                         style:
@@ -337,8 +338,7 @@ class _BodyPageState extends State<BodyPage> {
                                                   ),
                                                   TextButton(
                                                     onPressed: () {
-                                                      Navigator.of(context)
-                                                          .pop();
+                                                      Navigator.of(context, rootNavigator: true).pop();
                                                       dataSend();
                                                     },
                                                     child: Text('Confirm',

@@ -18,13 +18,22 @@ class Address with ChangeNotifier {
   String _city = 'Butuan City';
   String _moreDescription = '';
   int _errorMessage = 0;
+  bool _visible = false;
+  
 
+  bool get visible => _visible;
   String get roomNumber => _roomNumber;
   int get errorMessage => _errorMessage;
   String get street => _street;
   String get barangay => _barangay;
   String get city => _city;
   String get moreDescription => _moreDescription;
+
+  void changeVisible() {
+    if (_visible == false) {
+      _visible = true;
+    }
+  }
 
   void readAddress(String uid) async {
     final snapshot = await users.doc(uid).get();
@@ -70,6 +79,7 @@ class Address with ChangeNotifier {
       _city = formCity;
       _moreDescription = formDescription;
       _errorMessage = 0;
+      _visible = false;
       notifyListeners();
     }).catchError((error) {
       _errorMessage = 1;

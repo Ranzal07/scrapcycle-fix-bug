@@ -190,17 +190,18 @@ class _HomeState extends State<Home> {
       DeviceOrientation.portraitDown,
     ]);
 
-    // TODO: test this for the login and sign up
-
+    // TODO: test this for the login and sign up;
     context.read<UserState>().checkSchedule();
     context.read<UserState>().generateSchedule();
     context.read<ChangePage>().checkComplete(widget.userID);
+    context.read<ChangePage>().finished(widget.userID);
+
     context.read<ChangePage>().pendingButtonVisibilty1();
 
     final List<Widget> bodyOptions = [
       context.watch<ChangePage>().isCompleted == true
           ? BodyPage(id: widget.userID)
-          : const PendingPage(),
+          : PendingPage(id: widget.userID),
       PriceList(
         ID: widget.userID,
       ),
@@ -220,6 +221,7 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
+      
       appBar: navBarOptions.elementAt(pageIndex),
       body: Center(
         child: bodyOptions.elementAt(pageIndex),

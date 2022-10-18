@@ -3,13 +3,18 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../providers/change_notifier.dart';
 import '../providers/user_provider.dart';
 
-class PendingPage extends StatelessWidget {
-  const PendingPage({Key? key}) : super(key: key);
+class PendingPage extends StatefulWidget {
+  const PendingPage({Key? key,  required this.id}) : super(key: key);
+  final String id;
 
+  @override
+  State<PendingPage> createState() => _PendingPageState();
+}
+
+class _PendingPageState extends State<PendingPage> {
   @override
   Widget build(BuildContext context) {
     void showError(int errorType) {
@@ -21,26 +26,18 @@ class PendingPage extends StatelessWidget {
       );
     }
 
-        final userID = context.read<UserState>().getUserID;
-        final scheduleChoice = context.read<UserState>().getLastSchedule;
-        final year = DateTime.now().year;
 
     Future dataSend() async {
       var connectivityResult = await (Connectivity().checkConnectivity());
       if (connectivityResult == ConnectivityResult.mobile ||
           connectivityResult == ConnectivityResult.wifi) {
 
-        final schedule = FirebaseFirestore.instance.collection('schedule');
         final users = FirebaseFirestore.instance.collection('users');
 
         try {
             await users
-                .doc(userID)
-                .update({'completed?': true})
-                .then((value) {
-                    schedule.doc('$scheduleChoice, $year').collection('users').doc(userID).delete();
-                    context.read<ChangePage>().checkComplete(userID);
-            });
+                .doc(widget.id)
+                .update({'completed?': true});
             // Navigator.pop(context);
         } catch (e) {
             showError(2);

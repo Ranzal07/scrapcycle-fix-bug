@@ -4,11 +4,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class UserState with ChangeNotifier {
-  String _userID = '';
-  String _userName = '';
-  String _phoneNumber = '';
-  String _lastSchedule = '';
-  String _schedID = '';
+  String _userID = ' ';
+  String _userName = ' ';
+  String _phoneNumber = ' ';
+  String _lastSchedule = ' ';
+  String _schedID = ' ';
 
   String get getUserID => _userID;
   String get getUserName => _userName;
