@@ -26,6 +26,11 @@ class ChangePage with ChangeNotifier {
     notifyListeners();
   }
 
+    void getLastSched(String date){
+        schedID = date;
+        notifyListeners();
+    }
+
   void pendingButtonVisibilty1() async{
     DocumentSnapshot documentSnapshot =
         await FirebaseFirestore.instance.collection('collection-date').doc('Admin').get();

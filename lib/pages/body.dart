@@ -138,7 +138,7 @@ class _BodyPageState extends State<BodyPage> {
 
       String dateID = '$day-$month-$year';
       context.read<HomeState>().changeDateID(dateID);
-      context.read<ChangePage>().schedID = '$scheduleChoice, $year';
+      context.read<ChangePage>().getLastSched('$scheduleChoice, $year');
 
       try {
         await schedule.doc('$scheduleChoice, $year').collection('users').doc(userID).set({
@@ -328,7 +328,7 @@ class _BodyPageState extends State<BodyPage> {
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () {
-                                                      Navigator.of(context, rootNavigator: true).pop();
+                                                      Navigator.of(context).pop();
                                                     },
                                                     child: Text('Back',
                                                         style:
@@ -338,7 +338,7 @@ class _BodyPageState extends State<BodyPage> {
                                                   ),
                                                   TextButton(
                                                     onPressed: () {
-                                                      Navigator.of(context, rootNavigator: true).pop();
+                                                      Navigator.of(context).pop();
                                                       dataSend();
                                                     },
                                                     child: Text('Confirm',
